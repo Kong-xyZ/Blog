@@ -55,27 +55,43 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kong">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="为什么要接入FCM越来越多的国内厂商开始开拓海外市场，海外市场的Android设备绝大部分是接入了Google Service，所以在海外市场Android设备上使用最多以及最好使用的就是Google的推送了。 接入前准备 需要科学上网，以及Android设备安装Google服务 需要科学上网，以及Android设备安装Google服务 需要科学上网，以及Android设备安装Google服务">
+<meta name="keywords" content="Android--Basic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android系统级推送 - Firebase Cloud Messaging(FCM)快速傻瓜式接入">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;27&#x2F;Android%E7%B3%BB%E7%BB%9F%E7%BA%A7%E6%8E%A8%E9%80%81-Firebase-Cloud-Messaging-FCM-%E5%BF%AB%E9%80%9F%E5%82%BB%E7%93%9C%E5%BC%8F%E6%8E%A5%E5%85%A5&#x2F;index.html">
 <meta property="og:site_name" content="Kong">
+<meta property="og:description" content="为什么要接入FCM越来越多的国内厂商开始开拓海外市场，海外市场的Android设备绝大部分是接入了Google Service，所以在海外市场Android设备上使用最多以及最好使用的就是Google的推送了。 接入前准备 需要科学上网，以及Android设备安装Google服务 需要科学上网，以及Android设备安装Google服务 需要科学上网，以及Android设备安装Google服务">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92b4c723e19b4?w=1129&amp;h=898&amp;f=png&amp;s=76229">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92b5903075e55?w=1127&amp;h=897&amp;f=png&amp;s=60013">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92b6ab38ef5e1?w=793&amp;h=556&amp;f=png&amp;s=93323">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92b9fbc585f01?w=645&amp;h=867&amp;f=png&amp;s=87546">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92babf956730d?w=646&amp;h=863&amp;f=png&amp;s=77664">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92e75eaa4e4af?w=740&amp;h=573&amp;f=png&amp;s=48707">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92ead9f968f73?w=723&amp;h=568&amp;f=png&amp;s=49671">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92f8a30c2093c?w=1764&amp;h=31&amp;f=png&amp;s=15011">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92fac63d40325?w=521&amp;h=936&amp;f=png&amp;s=58457">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92fccc0f85131?w=1050&amp;h=470&amp;f=png&amp;s=28720">
+<meta property="og:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92fda8ea0c18b?w=590&amp;h=308&amp;f=png&amp;s=22649">
+<meta property="og:updated_time" content="2020-05-27T09:26:54.383Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;user-gold-cdn.xitu.io&#x2F;2019&#x2F;6&#x2F;26&#x2F;16b92b4c723e19b4?w=1129&amp;h=898&amp;f=png&amp;s=76229">
+  <link rel="canonical" href="http://yoursite.com/2020/05/27/Android%E7%B3%BB%E7%BB%9F%E7%BA%A7%E6%8E%A8%E9%80%81-Firebase-Cloud-Messaging-FCM-%E5%BF%AB%E9%80%9F%E5%82%BB%E7%93%9C%E5%BC%8F%E6%8E%A5%E5%85%A5/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Kong</title>
+  <title>Android系统级推送 - Firebase Cloud Messaging(FCM)快速傻瓜式接入 | Kong</title>
   
 
 
@@ -190,10 +206,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/kong-xyz.github.io/2020/05/27/Android%E7%B3%BB%E7%BB%9F%E7%BA%A7%E6%8E%A8%E9%80%81-Firebase-Cloud-Messaging-FCM-%E5%BF%AB%E9%80%9F%E5%82%BB%E7%93%9C%E5%BC%8F%E6%8E%A5%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -208,8 +224,9 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
+            Android系统级推送 - Firebase Cloud Messaging(FCM)快速傻瓜式接入
             
-            <a href="/kong-xyz.github.io/2020/05/27/Android%E7%B3%BB%E7%BB%9F%E7%BA%A7%E6%8E%A8%E9%80%81-Firebase-Cloud-Messaging-FCM-%E5%BF%AB%E9%80%9F%E5%82%BB%E7%93%9C%E5%BC%8F%E6%8E%A5%E5%85%A5/" class="post-title-link" itemprop="url">Android系统级推送 - Firebase Cloud Messaging(FCM)快速傻瓜式接入</a>
+
           
         </h1>
 
@@ -243,7 +260,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="为什么要接入FCM"><a href="#为什么要接入FCM" class="headerlink" title="为什么要接入FCM"></a>为什么要接入FCM</h2><p>越来越多的国内厂商开始开拓海外市场，海外市场的Android设备绝大部分是接入了Google Service，所以在海外市场Android设备上使用最多以及最好使用的就是Google的推送了。</p>
+        <h2 id="为什么要接入FCM"><a href="#为什么要接入FCM" class="headerlink" title="为什么要接入FCM"></a>为什么要接入FCM</h2><p>越来越多的国内厂商开始开拓海外市场，海外市场的Android设备绝大部分是接入了Google Service，所以在海外市场Android设备上使用最多以及最好使用的就是Google的推送了。</p>
 <h2 id="接入前准备"><a href="#接入前准备" class="headerlink" title="接入前准备"></a>接入前准备</h2><blockquote>
 <p>需要科学上网，以及Android设备安装Google服务 </br><br>需要科学上网，以及Android设备安装Google服务 </br><br>需要科学上网，以及Android设备安装Google服务 </br></p>
 </blockquote>
@@ -304,127 +321,59 @@
 <li><a href="https://firebase.google.com/docs/cloud-messaging/android/client" target="_blank" rel="noopener">FCM官方文档</a></li>
 </ul>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/kong-xyz.github.io/tags/Android-Basic/" rel="tag"># Android--Basic</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/kong-xyz.github.io/2019/12/31/2019%E6%80%BB%E7%BB%93/" rel="next" title="2019年终总结">
+                  <i class="fa fa-chevron-left"></i> 2019年终总结
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
       </footer>
+    
   </article>
   
   
   
 
-    
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/kong-xyz.github.io/2019/12/31/2019%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/kong-xyz.github.io/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kong">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            
-            <a href="/kong-xyz.github.io/2019/12/31/2019%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">2019年终总结</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-12-31 14:32:00" itemprop="dateCreated datePublished" datetime="2019-12-31T14:32:00+08:00">2019-12-31</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-27 17:21:35" itemprop="dateModified" datetime="2020-05-27T17:21:35+08:00">2020-05-27</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/kong-xyz.github.io/categories/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" itemprop="url" rel="index">
-                    <span itemprop="name">年终总结</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Hello World!</p>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-    
   </div>
-
-  
-
 
 
           </div>
           
-		<div id="gitalk-container"></div>
+    
+    <div class="comments" id="gitalk-container"></div>
+  
+	
 
         </div>
           
@@ -437,6 +386,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -449,6 +403,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要接入FCM"><span class="nav-number">1.</span> <span class="nav-text">为什么要接入FCM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接入前准备"><span class="nav-number">2.</span> <span class="nav-text">接入前准备</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Android-Studio-自带工具进行接入"><span class="nav-number"></span> <span class="nav-text">通过Android Studio 自带工具进行接入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后台进行推送测试"><span class="nav-number"></span> <span class="nav-text">后台进行推送测试</span></a></div>
+        
       </div>
       <!--/noindex-->
 
@@ -605,6 +561,22 @@
   
 
   
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+		var gitalk = new Gitalk({
+		  clientID: '',
+		  clientSecret: '',
+		  repo: 'blog-comment',
+		  owner: '',
+		  admin: [''],
+		  id: location.pathname,
+		  distractionFreeMode: ''
+		})
+		gitalk.render('gitalk-container')           
+       </script>
 
 </body>
 </html>
